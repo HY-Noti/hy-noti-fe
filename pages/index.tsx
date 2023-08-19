@@ -1,8 +1,11 @@
+import classNames from "classnames";
 
 export default function Home() {
   return (
-    <div>
-      Homepage
+    <div className={classNames(
+      'text-red-700'
+    )}>
+      Home
     </div>
   )
 }
