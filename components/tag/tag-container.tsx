@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import TagSelectList from './tag-list'
+import { Fragment } from 'react'
 
 const TagContainerHeader = classNames(
     'text-lg',
@@ -10,38 +11,41 @@ const TagContainerHeader = classNames(
     'border-gray-300',
 )
 
-function TagContainer() {
+export type TagContainerProps = {
+    handleTags: (t: string) => void
+}
 
+function TagContainer(props: TagContainerProps) {
     return (
-        <div className={classNames(
-            'w-full',
-
-            // flex
-            'flex',
-            'flex-row',
-            'justify-between',
-        )}>
             <div className={classNames(
-                'w-1/2',
-                'h-full',
-                'border-r',
-            )} >
-                <div className={
-                    TagContainerHeader
-                }>포탈</div>
-                <TagSelectList menu={1} />
-            </div>
+                'w-full',
 
-            <div className={classNames(
-                'w-1/2',
-                'h-full',
-            )} >
-                <div className={
-                    TagContainerHeader
-                }>학과공지</div>
-                <TagSelectList menu={2} />
+                // flex
+                'flex',
+                'flex-row',
+                'justify-between',
+            )}>
+                <div className={classNames(
+                    'w-1/2',
+                    'h-full',
+                    'border-r',
+                )} >
+                    <div className={
+                        TagContainerHeader
+                    }>포탈</div>
+                    <TagSelectList menu={1} handleTags = {props.handleTags}/>
+                </div>
+
+                <div className={classNames(
+                    'w-1/2',
+                    'h-full',
+                )} >
+                    <div className={
+                        TagContainerHeader
+                    }>학과</div>
+                    <TagSelectList menu={2} handleTags = {props.handleTags}/>
+                </div>
             </div>
-        </div>
     )
 }
 
