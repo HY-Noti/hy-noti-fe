@@ -18,10 +18,14 @@ function NotiPage() {
         }
     }
 
+    const handleChecked = (t: string) => {
+        return tag.includes(t)
+    }
+
     return (
         <Fragment>
             <div className={classNames(
-                'py-10',
+                'pt-10',
                 // flex
                 'flex',
                 'flex-col',
@@ -47,21 +51,22 @@ function NotiPage() {
                     'rounded-md',
                 )}>
                     {/* body */}
-                    <TagContainer handleTags={handleTags} />
+                    <TagContainer handleChecked={handleChecked} handleTags={handleTags} />
                 </div>
 
                 <div className={classNames(
                     'w-3/4',
 
+                    'py-4',
+
                     'grid',
                     'max-sm:grid-cols-3',
-                    'grid-cols-5',
+                    'grid-cols-8',
                     'gap-4',
                 )}>
                     {tag.map((v) => (
                         <Button iconRight={<X />} auto //marin auto
-                            width={'100%'}
-
+                            width={0.5}
                             type="success"
                             key={v + "_selected_btn"}
                             onClick={() => {

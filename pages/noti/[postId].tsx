@@ -1,4 +1,4 @@
-import { getDummyDataByTitle } from "@/data/dummy_data"
+import { DUMMY_HTML, getDummyDataByTitle } from "@/data/dummy_data"
 import classNames from "classnames"
 import { GetServerSideProps } from "next"
 import { useRouter } from "next/router"
@@ -71,7 +71,7 @@ function NotiDetailPage({ post } : { post: string }) {
                 'w-full',
 
                 'py-6',
-            )} dangerouslySetInnerHTML={{ __html: post }} />
+            )} dangerouslySetInnerHTML={{ __html: DUMMY_HTML }} />
         </div>
     )
 }
@@ -90,6 +90,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             notFound: true
         }
     }
+
     return (
         {
             props: {

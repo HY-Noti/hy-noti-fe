@@ -18,6 +18,7 @@ const TagContainerHeader = classNames(
 
 export type TagContainerProps = {
     handleTags: (t: string) => void
+    handleChecked: (t: string) => boolean
 }
 
 function TagContainer(props: TagContainerProps) {
@@ -44,7 +45,7 @@ function TagContainer(props: TagContainerProps) {
 
                     'border-r',
                 )}>
-                    <TagSelectList menu={1} handleTags={props.handleTags} />
+                    <TagSelectList handleChecked={props.handleChecked} menu={1} handleTags={props.handleTags} />
                 </div>
             </div>
 
@@ -58,7 +59,7 @@ function TagContainer(props: TagContainerProps) {
                     'h-52',
                     'overflow-y-scroll',
                 )}>
-                    <TagSelectList menu={2} handleTags={props.handleTags} />
+                    <TagSelectList handleChecked={props.handleChecked} menu={2} handleTags={props.handleTags} />
                 </div>
             </div>
         </div>

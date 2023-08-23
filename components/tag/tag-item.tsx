@@ -5,6 +5,8 @@ import classNames from "classnames"
 function TagItem(props: TagItemType) {
     const department = props.content //학과
     const handleTags = props.handleTags
+    const handleChecked = props.handleChecked
+
     return (
         <div
         className={classNames(
@@ -12,7 +14,9 @@ function TagItem(props: TagItemType) {
             'flex-row',
             'items-center',
         )}>
-            <Checkbox type="success" onChange={() => {
+            <Checkbox type="success" 
+            checked={handleChecked(department)}
+            onChange={() => {
                 handleTags(department)
             }} />
             <label>{department}</label>

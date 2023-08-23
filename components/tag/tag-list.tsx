@@ -27,7 +27,7 @@ function TagSelectList(props: TagListType) {
         'list-none',
       )}>
         {DUMMY_CATE.map(v => (
-          <TagItem key={"tag_item"+v} content={v} handleTags = {handleTags} />
+          <TagItem handleChecked={props.handleChecked} key={"tag_item"+v} content={v} handleTags = {handleTags} />
         ))}
       </ul>
     )
@@ -38,7 +38,7 @@ function TagSelectList(props: TagListType) {
       'list-none'
     )}>
       {DUMMY_MAJOR.map(v => (
-        <TagItem key={"tag_item"+v} content={v} handleTags = {handleTags} />
+        <TagItem handleChecked={props.handleChecked} key={"tag_item"+v} content={v} handleTags = {handleTags} />
       ))}
     </ul>
   )
