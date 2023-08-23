@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import TagSelectList from './tag-list'
-import { Fragment } from 'react'
 
 const TagContainerHeader = classNames(
     'h-12',
@@ -13,7 +12,6 @@ const TagContainerHeader = classNames(
     'font-bold',
     'bg-gray-100',
     
-    'border-r',
     'border-b',
     'border-gray-300',
 )
@@ -36,9 +34,10 @@ function TagContainer(props: TagContainerProps) {
             <div className={classNames(
                 'w-1/2',
             )} >
-                <div className={
-                    TagContainerHeader
-                }>포탈</div>
+                <div className={classNames(
+                    TagContainerHeader,
+                    'border-r',
+                )}>포탈</div>
                 <div className={classNames(
                     'h-52',
                     'overflow-y-scroll',

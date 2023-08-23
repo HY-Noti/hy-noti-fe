@@ -6,6 +6,7 @@ export const DUMMY_DATA = [
       date: '2023.07.19',
       title: '테스트 제목1',
       main: '2023년도 일반연구교류지원사업(NRF 인터내셔널 모빌리티) 추가공모 안내',
+      html: '<div>1번</div>'
     },
     {
       id: '2',
@@ -14,6 +15,7 @@ export const DUMMY_DATA = [
       date: '2023.07.31',
       title: '테스트 제목2',
       main: '2023년도 일반연구교류지원사업(NRF 인터내셔널 모빌리티) 추가공모 안내',
+      html: '<div>2번</div>'
     },
     {
       id: '3',
@@ -22,6 +24,7 @@ export const DUMMY_DATA = [
       date: '2023.07.31',
       title: '테스트 제목3',
       main: '입학게시글',
+      html: '<div>3번</div>'
     },
     {
       id: '4',
@@ -30,6 +33,7 @@ export const DUMMY_DATA = [
       date: '2023.08.31',
       title: '테스트 제목4',
       main: '테스트게시글',
+      html: '<div>4번</div>'
     },
   ];
   
@@ -52,6 +56,7 @@ export const DUMMY_DATA = [
     '원자력공학과',
   ];
   
+
   export const DUMMY_HTML = [
     `<div class="board_content">
     <span style="font-family: 굴림; font-size: 11pt; letter-spacing: -0.02em; text-align: justify; text-indent: -16.9pt;"><b>* 한양대학교(서울/ERICA) 군 e-러닝 과정 주요 내용</b></span><p class="HStyle0" style="margin-top: 0pt; margin-bottom: 0pt; margin-left: 16.9pt; text-align: justify; text-indent: -16.9pt; line-height: 21.3333px; font-size: 10pt; font-family: 바탕;">&nbsp;</p><div style="margin: 0px; padding: 0px; font-size: medium; float: left;"><span style="margin: 0px; padding: 0px; position: relative; font-size: 11pt; font-family: 굴림; letter-spacing: -0.02em; line-height: 23.4667px;">&nbsp;&nbsp;</span></div><table class="__se_tbl_ext" cellspacing="0" cellpadding="0" style="margin: 0px; padding: 0px; border-collapse: collapse; border: none; table-layout: fixed;"><tbody style="margin: 0px; padding: 0px;"><tr style="margin: 0px; padding: 0px;"><td valign="middle" bgcolor="#d8d8d8" style="margin: 0px; padding: 2px 7px; overflow: hidden; width: 120px; height: 26px; border-width: 0.42525pt; border-style: solid; border-color: rgb(0, 0, 0);"><p class="HStyle0" style="
@@ -290,3 +295,8 @@ export const DUMMY_DATA = [
   color:#000000;
   margin-top: 0pt; margin-bottom: 0pt; text-align: justify; text-indent: 0pt; line-height: 21.3333px; font-size: 10pt; font-family: 바탕; letter-spacing: 0px;">● <span style="margin: 0px; padding: 0px; position: relative; font-size: 11pt; font-family: 굴림; line-height: 23.4667px;">소속기관(국방부, 병무청)에서 수강료 80% + 수수료 11,000원 지원(문의 : 나라사랑포털 1522-0770)</span></p></td></tr></tbody></table><img src="http://ie.hanyang.ac.kr/upload_hi/board_photo/20230726122000_55.png" title="20230726122000_55.png" width="640" height="281"><br style="clear:both;"><p>&nbsp;</p><p>&nbsp;</p><p style="font-size: medium;">&nbsp;</p><p class="HStyle0" style="margin-top: 0pt; margin-bottom: 0pt; margin-left: 16.9pt; text-align: justify; text-indent: -16.9pt; line-height: 21.3333px; font-size: 10pt; font-family: 바탕;">&nbsp;</p><div id="hwpEditorBoardContent" data-hjsonver="1.0" data-jsonlen="21583" style="margin: 0px; padding: 0px; font-size: medium;"></div><pre style="word-break: break-all;white-space: pre-line;"></pre>						</div>`
   ]
+
+  export async function getDummyDataByTitle(title: string) {
+    const text =  DUMMY_DATA.find((data) => data.title === title);
+    return text?.html
+  }

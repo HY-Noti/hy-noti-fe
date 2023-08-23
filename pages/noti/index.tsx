@@ -21,13 +21,17 @@ function NotiPage() {
     return (
         <Fragment>
             <div className={classNames(
+                'py-10',
                 // flex
                 'flex',
                 'flex-col',
                 'items-center',
                 'justify-center',
 
-                'noti-bg',
+                'bg-gradient-to-t',
+                'from-gradient-l',
+                'to-gradient-r',
+
             )}>
                 <h3>필터 목록</h3>
 
@@ -39,6 +43,7 @@ function NotiPage() {
                     // border
                     'border',
                     'border-gray-300',
+                    'bg-gray-50',
                     'rounded-md',
                 )}>
                     {/* body */}
