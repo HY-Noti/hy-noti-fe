@@ -1,4 +1,4 @@
-import { Button, Fieldset } from '@geist-ui/core'
+import { Avatar, Button, Fieldset } from '@geist-ui/core'
 import classNames from 'classnames'
 import React from 'react'
 
@@ -36,14 +36,44 @@ function PostItem(props: PostItemProps) {
         boxShadow: '5px 5px 10px 3px rgba(0,0,0,0.1)',
         marginBottom: '1rem',
       }}
-    >
-      <Fieldset.Title>
-        {props.post.title}
-      </Fieldset.Title>
 
-      <Fieldset.Subtitle>
-        {props.post.date}
-      </Fieldset.Subtitle>
+      label='asdasd'
+    >
+      <div className={classNames(
+        'w-full',
+
+        'flex',
+        'flex-row',
+      )}>
+        <div className={classNames(
+          'w-1/10',
+          'mr-4',
+
+          'flex',
+          'justify-center',
+        )}>
+          {props.post.tag.slice(-2) == '학과' ? (
+            <Avatar src={
+              '/image/hanyang.png'
+            } />) : (
+            <Avatar src={
+              '/image/sugang.png'
+            } />
+          )}
+
+        </div>
+        <div className={classNames(
+          'overflow-x-scroll',
+        )}>
+          <Fieldset.Title>
+            {props.post.title}
+          </Fieldset.Title>
+
+          <Fieldset.Subtitle>
+            {props.post.main}
+          </Fieldset.Subtitle>
+        </div>
+      </div>
 
       <Fieldset.Footer>
         <div className={classNames(
@@ -69,13 +99,13 @@ function PostItem(props: PostItemProps) {
 
             'p-2',
           )}>
-          {props.post.tag}
+            {props.post.tag}
           </div>
 
           <div className={classNames(
             'text-xs',
             'text-center',
-            
+
             'text-gray-400',
           )}>
             {props.post.date}

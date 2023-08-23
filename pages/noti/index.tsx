@@ -27,7 +27,7 @@ function NotiPage() {
                 'items-center',
                 'justify-center',
 
-                'bg-red-50',
+                'noti-bg',
             )}>
                 <h3>필터 목록</h3>
 
@@ -74,8 +74,6 @@ function NotiPage() {
                 'flex-col',
                 'items-center',
                 'justify-center',
-
-                'bg-blue-50',
             )}>
                 <PostList tag={tag}/>
             </div>

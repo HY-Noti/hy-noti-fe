@@ -3,6 +3,7 @@ import React from 'react'
 import PostItem from './post-item'
 import Link from 'next/link'
 import classNames from 'classnames'
+import PostSide from './post-sidebar'
 
 export type PostListProps = {
     tag: string[]
@@ -14,14 +15,35 @@ function PostList(props: PostListProps) {
             <div className={classNames(
                 'w-3/4',
                 'py-4',
+
+                'flex',
+                'max-sm:flex-col',
+                'justify-between',
             )}>
-                {DUMMY_DATA.map(v => (
-                    <Link
-                        href={`/noti/${v.title}`}
-                    >
-                        <PostItem post={v} />
-                    </Link>
-                ))}
+                <div className={classNames(
+                    'w-3/4',
+                    'max-sm:w-full',
+                )}>
+                    {DUMMY_DATA.map(v => (
+                        <Link
+                            key={"post_link" + v.id}
+                            href={`/noti/${v.title}`}
+                        >
+                            <PostItem key={"post_item" + v.id} post={v} />
+                        </Link>
+                    ))}
+                </div>
+
+                <div className={classNames(
+                    'w-1/4',
+                    'max-sm:w-full',
+
+                    'pl-4',
+                    'max-sm:pl-0',
+                )}>
+                    <PostSide />
+                </div>
+
             </div>
         )
     }
@@ -29,15 +51,26 @@ function PostList(props: PostListProps) {
         <div className={classNames(
             'w-3/4',
             'py-4',
+
+            'flex',
+            'justify-between',
         )}>
-            {DUMMY_DATA.map(v =>
-                props.tag.includes(v.tag) && (
-                    <Link
-                        href={`/noti/${v.title}`}
-                    >
-                        <PostItem post={v} />
-                    </Link>)
-            )}
+            <div className={classNames(
+                'w-3/4',
+            )}>
+                {DUMMY_DATA.map(v =>
+                    props.tag.includes(v.tag) && (
+                        <Link
+                            key={"post_link_s" + v.id}
+                            href={`/noti/${v.title}`}
+                        >
+                            <PostItem key={"post_item_s" + v.id} post={v} />
+                        </Link>)
+                )}
+            </div>
+            <div>
+                <PostSide />
+            </div>
         </div>
     )
 }
