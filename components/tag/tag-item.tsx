@@ -6,7 +6,7 @@ function TagItem(props: TagItemType) {
     const department = props.content //학과
     const handleTags = props.handleTags
     return (
-        <li 
+        <div
         className={classNames(
             'flex',
             'flex-row',
@@ -16,7 +16,7 @@ function TagItem(props: TagItemType) {
                 handleTags(department)
             }} />
             <label>{department}</label>
-        </li>
+        </div>
     )
 }
 

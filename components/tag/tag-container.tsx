@@ -3,10 +3,17 @@ import TagSelectList from './tag-list'
 import { Fragment } from 'react'
 
 const TagContainerHeader = classNames(
+    'h-12',
+    'flex',
+    'items-center',
+    'justify-center',
+
     'text-lg',
     'text-center',
     'font-bold',
     'bg-gray-100',
+    
+    'border-r',
     'border-b',
     'border-gray-300',
 )
@@ -28,27 +35,32 @@ function TagContainer(props: TagContainerProps) {
         )}>
             <div className={classNames(
                 'w-1/2',
-                'h-full',
-
-                'overflow-y-scroll'
-
             )} >
                 <div className={
                     TagContainerHeader
                 }>포탈</div>
-                <TagSelectList menu={1} handleTags={props.handleTags} />
+                <div className={classNames(
+                    'h-52',
+                    'overflow-y-scroll',
+
+                    'border-r',
+                )}>
+                    <TagSelectList menu={1} handleTags={props.handleTags} />
+                </div>
             </div>
 
             <div className={classNames(
                 'w-1/2',
-                'h-full',
-
-                'overflow-y-scroll'
             )} >
                 <div className={
                     TagContainerHeader
                 }>학과</div>
-                <TagSelectList menu={2} handleTags={props.handleTags} />
+                <div className={classNames(
+                    'h-52',
+                    'overflow-y-scroll',
+                )}>
+                    <TagSelectList menu={2} handleTags={props.handleTags} />
+                </div>
             </div>
         </div>
     )
