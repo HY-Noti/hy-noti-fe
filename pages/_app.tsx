@@ -1,3 +1,4 @@
+import NotiBot from '@/components/chat/bot'
 import GlobalNav from '@/components/nav/GlobalNav'
 import '@/styles/globals.css'
 import { CssBaseline, GeistProvider } from '@geist-ui/core'
@@ -9,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <CssBaseline/>
       <GlobalNav />
       <Component {...pageProps} />
+      <NotiBot />
     </GeistProvider>
   )
 }
