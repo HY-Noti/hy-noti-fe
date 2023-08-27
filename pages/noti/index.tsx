@@ -26,7 +26,22 @@ function NotiPage() {
     return (
         <Fragment>
             <div className={classNames(
-                'pt-10',
+                'w-3/4',
+
+                'pt-20',
+
+                'flex',
+                'items-center',
+                'justify-start',
+
+                'm-auto',
+            )}>
+                <h3 className={classNames(
+                    'font-extrabold',
+                )}>필터 목록</h3>
+            </div>
+
+            <div className={classNames(
                 // flex
                 'flex',
                 'flex-col',
@@ -38,7 +53,6 @@ function NotiPage() {
                 'to-gradient-r',
 
             )}>
-                <h3>필터 목록</h3>
 
                 {/* 체크박스 선택 */}
                 <div className={classNames(
@@ -84,15 +98,15 @@ function NotiPage() {
                 'items-center',
                 'justify-center',
             )}>
-                <PostList page={page} tag={tag}/>
+                <PostList page={page} tag={tag} />
             </div>
 
             <div className={classNames(
                 'flex',
                 'items-center',
                 'justify-center',
-            )}> 
-            {/* count : 최대 페이지 수
+            )}>
+                {/* count : 최대 페이지 수
             initialPage : 초기 페이지 */}
                 <Pagination count={10} initialPage={page} onChange={(e) => {
                     setPage(e)
