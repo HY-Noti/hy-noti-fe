@@ -1,7 +1,7 @@
 
 import PostList from "@/components/post/post-list"
 import TagContainer from "@/components/tag/tag-container"
-import { Button } from "@geist-ui/core"
+import { Button, Pagination } from "@geist-ui/core"
 import { X } from "@geist-ui/icons"
 import classNames from "classnames"
 import { Fragment, useState } from "react"
@@ -9,6 +9,7 @@ import { Fragment, useState } from "react"
 
 function NotiPage() {
     const [tag, setTag] = useState<string[]>([])
+    const [page, setPage] = useState<number>(1)
 
     const handleTags = (t: string) => {
         if (tag.includes(t)) {
@@ -42,7 +43,6 @@ function NotiPage() {
                 {/* 체크박스 선택 */}
                 <div className={classNames(
                     'w-3/4',
-                    'h-1/2',
 
                     // border
                     'border',
@@ -56,7 +56,6 @@ function NotiPage() {
 
                 <div className={classNames(
                     'w-3/4',
-
                     'py-4',
 
                     'grid',
@@ -85,7 +84,19 @@ function NotiPage() {
                 'items-center',
                 'justify-center',
             )}>
-                <PostList tag={tag}/>
+                <PostList page={page} tag={tag}/>
+            </div>
+
+            <div className={classNames(
+                'flex',
+                'items-center',
+                'justify-center',
+            )}> 
+            {/* count : 최대 페이지 수
+            initialPage : 초기 페이지 */}
+                <Pagination count={10} initialPage={page} onChange={(e) => {
+                    setPage(e)
+                }} />
             </div>
         </Fragment>
 

@@ -1,6 +1,6 @@
 export const DUMMY_DATA = [
     {
-      id: '1',
+      id: 1,
       major: 'ie',
       tag: '산업공학과',
       date: '2023.07.19',
@@ -9,7 +9,7 @@ export const DUMMY_DATA = [
       html: '<div>1번</div>'
     },
     {
-      id: '2',
+      id: 2,
       major: 'ie',
       tag: '학사',
       date: '2023.07.31',
@@ -18,7 +18,7 @@ export const DUMMY_DATA = [
       html: '<div>2번</div>'
     },
     {
-      id: '3',
+      id: 3,
       major: 'ie',
       tag: '입학',
       date: '2023.07.31',
@@ -27,7 +27,7 @@ export const DUMMY_DATA = [
       html: '<div>3번</div>'
     },
     {
-      id: '4',
+      id: 4,
       major: 'ie',
       tag: '학사',
       date: '2023.08.31',

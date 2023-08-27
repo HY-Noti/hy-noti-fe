@@ -4,7 +4,7 @@ import React from 'react'
 
 export type PostItemProps = {
   post: {
-    id: string
+    id: number
     major: string
     date: string
     title: string
